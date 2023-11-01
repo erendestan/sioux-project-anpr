@@ -1,4 +1,4 @@
-# import cv2 
+# import cv2
 # import os
 
 # haarcascade = r"C:\Users\erend\OneDrive\Desktop\Fontys Software - 2nd Year\Group Project - Sioux\Clone Trials\Car-Number-Plates-Detection\model\haarcascade_russian_plate_number.xml" #Change path
@@ -33,14 +33,14 @@
 #             cv2.imshow("ROI", img_roi)
 
 
-    
+
 #     cv2.imshow("Result", img)
 
 
 #     if cv2.waitKey(1) & 0xFF == ord('s'):
 #         output_folder = r'C:\Users\erend\OneDrive\Desktop\Fontys Software - 2nd Year\Group Project - Sioux\Clone Trials\Car-Number-Plates-Detection\plates' #Change path
 #         output_path = os.path.join(output_folder, "scaned_img_" + str(count) + ".jpg")
-        
+
 
 #         # cv2.imwrite("plates/scaned_img_" + str(count) + ".jpg", img_roi)
 #         cv2.imwrite(output_path, img_roi)
@@ -55,7 +55,7 @@ import cv2
 import os
 import time
 
-harcascade = r'C:\Users\erend\OneDrive\Desktop\Fontys Software - 2nd Year\Group Project - Sioux\Clone Trials\Car-Number-Plates-Detection\model\haarcascade_russian_plate_number.xml'
+harcascade = r"./model/haarcascade_russian_plate_number.xml"
 
 cap = cv2.VideoCapture(0)
 cap.set(3, 640)  # width
@@ -63,7 +63,7 @@ cap.set(4, 480)  # height
 
 min_area = 500
 count = 0
-output_folder = r'C:\Users\erend\OneDrive\Desktop\Fontys Software - 2nd Year\Group Project - Sioux\Clone Trials\Car-Number-Plates-Detection\plates'
+output_folder = r"./plates"
 
 license_plate_detected = False  # Flag to track if a license plate has been detected
 last_detection_time = 0  # Time of the last license plate detection
