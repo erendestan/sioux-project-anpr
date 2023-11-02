@@ -36,13 +36,12 @@ while True:
 
             img_roi = img[y: y + h, x: x + w]
 
-            if time.time() - last_detection_time >= 2:  # Check if 2 seconds have passed
+            if time.time() - last_detection_time >= 4:  # Check if 2 seconds have passed
                 output_path = os.path.join(output_folder, "plate_img_" + str(count) + ".jpg")
                 cv2.imwrite(output_path, img_roi)
                 count += 1
                 last_detection_time = time.time()
 
-                # Call the text extraction function for the newly saved image
                 extract_text_from_image(output_path, count)
 
             license_plate_detected = True  # Set the flag to True

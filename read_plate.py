@@ -19,6 +19,12 @@ def extract_text_from_image(image_path, count):
         output_text = entry[1]
         confidence_score = entry[2]
 
+        if confidence_score < 0.8:
+            continue
+
+        if len(output_text.replace('-', '')) != 6:
+            continue
+
         formatted_line = f"{output_text} (Confidence: {confidence_score})"
 
         output_text_file = os.path.join(output_directory, f"plate_{current_time}_{count}.txt")
