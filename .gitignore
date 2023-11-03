@@ -128,5 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-/plates
+/output_text
+/output_images
 .vscode/settings.json
