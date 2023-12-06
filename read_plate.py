@@ -31,11 +31,11 @@ def extract_text_from_image(image_path, count):
         # Skip entries with low confidence scores (less than 0.8)
         if confidence_score < 0.8:
             continue
-        
+
         # Skip entries that do not have a specific length (e.g., not 6 characters)
         if len(output_text.replace('-', '')) != 6:
             continue
-        
+
         # Format the extracted text and confidence score
         formatted_line = f"{output_text} (Confidence: {confidence_score})"
 
