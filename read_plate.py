@@ -1,6 +1,10 @@
 import easyocr #library for text extraction
 import os
 from datetime import datetime
+import logging
+
+# Set the logging level to suppress warnings
+logging.getLogger('easyocr').setLevel(logging.ERROR)
 
 output_directory = "output_text"
 
@@ -27,11 +31,11 @@ def extract_text_from_image(image_path, count):
         # Skip entries with low confidence scores (less than 0.8)
         if confidence_score < 0.8:
             continue
-        
+
         # Skip entries that do not have a specific length (e.g., not 6 characters)
         if len(output_text.replace('-', '')) != 6:
             continue
-        
+
         # Format the extracted text and confidence score
         formatted_line = f"{output_text} (Confidence: {confidence_score})"
 
@@ -44,4 +48,4 @@ def extract_text_from_image(image_path, count):
 
         print(f"Text extracted and saved to {output_text_file} with confidence score {confidence_score}")
 
-    print("Text extraction complete")
+    # print("Text extraction complete")
